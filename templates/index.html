@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if not current_user.is_authenticated %}
+    <a href="/registration" class="reg_button">Зарегистрироваться</a>
+    <a href="/login">Войти</a>
+    {% else %}
+    {{ user.email }}
+    {{ user.created_date }}
+        <a href="/logout">Выйти</a>
+    {% endif %}
+
+    {{ ip_addr }}
+
+{% endblock %}

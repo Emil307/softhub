@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="post" novalidate enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {{ form.csrf_token }}
+
+    {{ form.email }}
+    {{ email_error }}
+    {{ form.password }}
+    {{ password_error }}
+
+    <button type="submit">Войти</button>
+</form>
+
+{% endblock %}
